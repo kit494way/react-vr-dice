@@ -1,0 +1,15 @@
+#!/bin/bash
+
+convert -size 256x256 canvas:white png32:white.png
+
+convert white.png -draw 'circle 128 128 158 128' png32:one.png
+
+convert white.png -draw 'circle 42 42 62 42 circle 214 214 234 214' png32:two.png
+
+convert white.png -draw 'circle 42 42 62 42 circle 128 128 148 128 circle 214 214 234 214' png32:three.png
+
+convert white.png -draw 'circle 42 42 62 42 circle 214 42 234 42 circle 214 214 234 214 circle 42 214 62 214' png32:four.png
+
+convert white.png -draw 'circle 42 42 62 42 circle 214 42 234 42 circle 214 214 234 214 circle 42 214 62 214 circle 128 128 148 128' png32:five.png
+
+convert white.png -draw 'circle 42 42 62 42 circle 214 42 234 42 circle 42 128 62 128 circle 214 128 234 128 circle 42 214 62 214 circle 214 214 234 214' png32:six.png
