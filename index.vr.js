@@ -33,13 +33,16 @@ export default class react_vr_dice extends React.Component {
     this.onClickStartHandler = this.onClickStartHandler.bind(this);
     this.onInputHandler = this.onInputHandler.bind(this);
     this.resetScene = this.resetScene.bind(this);
+
+    this.xz = [[52, 52], [51, 51], [52, 51], [52, 53], [53, 51], [52, 54]];
   }
 
   onClickStartHandler() {
     this.resetScene();
 
-    const rotateXNum = Math.floor(Math.random() * 6) + 51;
-    const rotateZNum = Math.floor(Math.random() * 6) + 51;
+    const rand = Math.floor(Math.random() * 6);
+    const rotateXNum = this.xz[rand][0];
+    const rotateZNum = this.xz[rand][1];
     Animated.sequence([
       Animated.parallel([
         Animated.timing(this.state.diceRotateX, {
